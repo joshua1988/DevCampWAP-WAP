@@ -1,20 +1,58 @@
-var Foo = {
+var Login = {
   template: `
-    <div>foo <router-view></router-view></div>
+    <div>
+      Login Section
+      <router-view></router-view>
+    </div>
   `,
 };
-var Bar = { template: '<div>bar</div>' };
-var FooHome = { template: '<p>FooHome</p>' };
+var LoginForm = {
+  template: `
+    <form action="/" method="post">
+      <div>
+          <label for="account">E-mail : </label>
+          <input type="email" id="account">
+      </div>
+      <div>
+          <label for="password">Password : </label>
+          <input type="password" id="password">
+      </div>
+    </form>
+  `,
+};
+var List = {
+  template: `
+    <div>
+      List Section
+      <router-view></router-view>
+    </div>
+  `,
+};
+var ListItems = {
+  template: `
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  `,
+};
 
 var routes = [
   {
-    path: '/foo',
-    component: Foo,
+    path: '/login',
+    component: Login,
     children: [
-      { path: '', component: FooHome }
+      { path: '', component: LoginForm }
     ]
   },
-  { path: '/bar', component: Bar }
+  {
+    path: '/list',
+    component: List,
+    children: [
+      { path: '', component: ListItems }
+    ]
+  }
 ];
 
 var router = new VueRouter({

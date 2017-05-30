@@ -15,4 +15,4 @@ For those who are very new to the Vue.js, these samples help you gain a better u
   - [Official Library](https://github.com/vuejs/vue-router) supported
 
 4. Nested Router
-  -
+  - Understand how Vue Nested Router includes its Child Component to render on the same router path as Parent Component does.
